@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #09161d;
+}
+.card {
+  position: relative;
+  height: 420px;
+  width: 320px;
+  background: #122936;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.card::before {
+  content: '';
+  position: absolute;
+   left:0; 
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  transform:skewY(345deg);
+  transition:0.5s;
+  
+}
+.card:hover::before{
+    transform:skewY(390deg);
+    top:-70%;
+    
+}
+.card::after{
+    content:'BOAT';
+    position:absolute;
+    bottom:0;
+    left:0;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 7.2em;
+    color:rgba(0,0,0,0.1);
+
+}
+.card .imgbox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height:70%;
+    z-index: 1;
+    padding-top: 20px;
+    
+} 
+.card .imgbox img{
+    max-width: 100%;
+    height:100%;
+    transition: 0.5s;
+}
+.card:hover .imgbox img{
+    max-width: 50%;
+}
+.card .contentbox{
+  margin-top: 6px;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+z-index: 1;
+}
+.card .contentbox h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: sans-serif; 
+
+}
+.card .contentbox .price{     
+ font-size: 24px;
+ color: #fff;
+ font-weight: 500;
+ letter-spacing: 1px; 
+ font-family: sans-serif;    
+}
+.card .contentbox .buy{
+ 
+    position: relative;
+    opacity: 0;
+    top: 200px;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #fff;
+    text-decoration: none;
+    background: #2196f3;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    font-family: sans-serif; 
+
+}
+.card:hover .contentbox .buy{
+    top: 0px;
+    opacity: 1;
+}
